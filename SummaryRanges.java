@@ -3,7 +3,7 @@ import java.util.List;
 
 public class SummaryRanges {
     public static void main(String[] args) {
-        int[] nums = {0,12,22,23,24};
+        int[] nums = {11,12,13,22,23,24};
         System.out.println(summaryRanges(nums));
         System.out.println(summaryRangesLastNFirst(nums));
     }

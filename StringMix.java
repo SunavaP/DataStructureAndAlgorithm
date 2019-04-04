@@ -23,25 +23,25 @@ public class StringMix {
             if (num >= 0)
                 charLen2[num] = charLen2[num] + 1;
         }
-        PriorityQueue<Node> queue = new PriorityQueue<>();
+        PriorityQueue<ComponentNode> queue = new PriorityQueue<>();
         for (int i = 0; i < charLen1.length; ++i) {
             if(charLen1[i]>1 || charLen2[i]>1) {
-                Node node;
+                ComponentNode node;
                 int length1 = charLen1[i];
                 int length2 = charLen2[i];
                 if(length1>length2) {
-                    node = new Node(length1,i,"1");
+                    node = new ComponentNode(length1,i,"1");
                 } else if(length1<length2) {
-                    node = new Node(length2,i,"2");
+                    node = new ComponentNode(length2,i,"2");
                 } else {
-                    node = new Node(length1,i,"=");
+                    node = new ComponentNode(length1,i,"=");
                 }
                 queue.add(node);
             }
         }
         StringBuilder str = new StringBuilder();
         while (!queue.isEmpty()) {
-            Node newNode = queue.poll();
+            ComponentNode newNode = queue.poll();
             String c = String.valueOf((char)(newNode.pos + 'a'));
             str.append(newNode.cl).append(":");
             for(int i=0;i<newNode.length;++i)
@@ -52,12 +52,12 @@ public class StringMix {
         System.out.println(str.toString());
     }
 
-    static class Node implements Comparable<Node> {
+    static class ComponentNode implements Comparable<ComponentNode> {
         int length;
         int pos;
         String cl;
 
-        Node(int length,int pos,String cl) {
+        ComponentNode(int length,int pos,String cl) {
             this.length = length;
             this.pos = pos;
             this.cl = cl;
@@ -65,7 +65,7 @@ public class StringMix {
 
 
         @Override
-        public int compareTo(Node o) {
+        public int compareTo(ComponentNode o) {
             int result = o.length-this.length;
             if(result == 0 && o.cl.equals("=") && this.cl.equals("="))
                 return this.pos - o.pos;

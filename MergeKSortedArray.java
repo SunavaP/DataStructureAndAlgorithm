@@ -31,14 +31,14 @@ public class MergeKSortedArray {
     }
 
     private static void mergeAllLIst(LinkedList<Integer>[] arr,int k) {
-        PriorityQueue<Node> queue = new PriorityQueue<>();
+        PriorityQueue<ComponentNode> queue = new PriorityQueue<>();
         for (LinkedList<Integer> a:arr) {
-            Node newNode = new Node(a);
+            ComponentNode newNode = new ComponentNode(a);
             queue.add(newNode);
         }
         LinkedList<Integer> newList = new LinkedList<>();
         while (!queue.isEmpty()) {
-            Node newNode = queue.poll();
+            ComponentNode newNode = queue.poll();
             newList.add(newNode.list.getFirst());
             newNode.list.removeFirst();
             if(!newNode.list.isEmpty()) {
@@ -48,15 +48,15 @@ public class MergeKSortedArray {
         System.out.println(newList);
     }
 
-    static class Node implements Comparable<Node>{
+    static class ComponentNode implements Comparable<ComponentNode>{
         LinkedList<Integer> list;
 
-        Node(LinkedList<Integer> l) {
+        ComponentNode(LinkedList<Integer> l) {
             list = l;
         }
 
         @Override
-        public int compareTo(Node o) {
+        public int compareTo(ComponentNode o) {
             return this.list.getFirst() - o.list.getFirst();
         }
     }

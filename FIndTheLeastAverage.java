@@ -7,16 +7,13 @@ public class FIndTheLeastAverage {
 
         List<ComponentNode> components;
         int value = 0;
-
         public ComponentNode() {
-
             components = new ArrayList<ComponentNode>();
         }
 
         public ComponentNode(int numlineschanged) {
             this.value = numlineschanged;
             this.components = new ArrayList<ComponentNode>();
-
         }
 
     }
@@ -72,15 +69,15 @@ public class FIndTheLeastAverage {
         while (!q.isEmpty()) {
             ComponentNode curr = q.peek();
             q.remove();
-            boolean isInternal = false;
+//            boolean isInternal = false;
             if (!(curr.components.size() == 0)) {
-                isInternal = true;
+//                isInternal = true;
                 internalList.add(curr);
                 q.addAll(curr.components);
             }
-            if (isInternal) {
-                ComponentNode k = curr;
-            }
+//            if (isInternal) {
+//                ComponentNode k = curr;
+//            }
         }
         int position = 0;
         Double avg = Double.MIN_VALUE;

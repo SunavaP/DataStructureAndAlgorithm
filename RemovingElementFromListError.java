@@ -18,30 +18,19 @@ public class RemovingElementFromListError {
         al.add(1);
         al.add(2);
         al.add(1);
-
-
-        // Check that multiple occurrences of 1 is not removed
-        // This makes a call to remove(Object) and
-        // removes element 1
+        // Check that multiple occurrences of 1 is not removed This makes a call to remove(Object) andremoves element 1
         al.remove(new Integer(1));
 
-        // This makes a call to remove(Object) and
-        // removes element 2
+        // This makes a call to remove(Object) and removes element 2
         al.remove(new Integer(2));
-
         System.out.println("Modified ArrayList : " + al);
-
-
         //Right method
         ArrayList<String> list = new ArrayList<>(Arrays.asList("a", "b", "c", "d", "d"));
-//        Iterator<String> iter = list.iterator();
         list.removeIf(s -> s.equals("d"));
         System.out.println("Modified ArrayList  : " + list);
 
-
         ArrayList<String> newList = new ArrayList<>(Arrays.asList("a", "b", "c", "d", "d"));
-        newList.removeAll(Collections.singleton("first"));
-
-        System.out.println("Modified ArrayList : " + list);
+        newList.removeAll(Collections.singleton("a"));
+        System.out.println("Modified ArrayList : " + newList);
     }
 }

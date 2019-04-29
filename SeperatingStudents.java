@@ -11,8 +11,8 @@ public class SeperatingStudents {
     }
 
     private static int minMoves(int[] studentAvg, int len) {
-        int count = 0,count0 = 0, flag = 1;
-        int moves1 = 0,moves0 = 0;
+        int count = 0, count0 = 0, flag = 1;
+        int moves1 = 0, moves0 = 0;
         for (int i = 0; i < len; ++i) {
             if (flag == studentAvg[i]) {
                 moves1 += Math.abs(i - count);

@@ -16,5 +16,5 @@ The list contains interview questin from organisation:
 7. BNSF
 8. DELL EMC
 9. Yahoo Mail
-10.Medecision
-11.teradata
+10. Medecision
+11. teradata

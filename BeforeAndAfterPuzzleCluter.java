@@ -29,7 +29,8 @@ public class BeforeAndAfterPuzzleCluter {
             else {
                 int[] pos = map.get(array[0]);
                 if (pos[0] != 0) {
-                    String str = concat(phrases.get(pos[1]), res);
+//                    String str = concat(phrases.get(pos[1]), res);
+                    String str = concatShorter(phrases.get(pos[1]), res,array[0]);
                     result.add(str);
                 }
             }
@@ -40,7 +41,8 @@ public class BeforeAndAfterPuzzleCluter {
             else {
                 int[] pos = map.get(array[len]);
                 if (pos[0] != len) {
-                    String str = concat(res, phrases.get(pos[1]));
+//                    String str = concat(res, phrases.get(pos[1]));
+                    String str = concatShorter(res, phrases.get(pos[1]),array[len]);
                     result.add(str);
                 }
             }
@@ -49,6 +51,11 @@ public class BeforeAndAfterPuzzleCluter {
 
 
         return result;
+    }
+
+
+    private static String concatShorter(String left, String right, String common) {
+        return left + right.substring(common.length());
     }
 
     private static String concat(String left, String right) {

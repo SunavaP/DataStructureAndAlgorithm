@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class KeyPad {
+public class LetterCombinationsofAPhoneNumber {
 
     public static void main(String[] args) {
         HashMap<Integer, String> map = new HashMap<>();
@@ -13,9 +13,10 @@ public class KeyPad {
         map.put(6, "mno");
         map.put(7, "pqrs");
         map.put(8, "tuv");
-        map.put(7, "wxyz");
+        map.put(9, "wxyz");
         List<String> list = new ArrayList<>();
         System.out.println(printNumber(list, 0, map,"238",""));
+        System.out.println(printNumber(list, 0, map,"9",""));
     }
 
     private static List<String> printNumber(List<String> list, int pos, HashMap<Integer, String> map,String input,
